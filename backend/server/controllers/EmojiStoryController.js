@@ -2,8 +2,8 @@ import data from "../data.js";
 import EmojiStoryModel from "../models/EmojiStoryModel.js";
 import TranslationRuleModel from "../models/TranslationRuleModel.js";
 
-const translateEmojis = (emojiSequence) => {
-  const rules = TranslationRuleModel.find();
+const translateEmojis = async (emojiSequence) => {
+  const rules = await TranslationRuleModel.find();
   let translationParts = [];
   let i = 0;
   while (i < emojiSequence.length) {
