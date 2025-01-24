@@ -35,7 +35,9 @@ const translateEmojis = async (emojiSequence) => {
 
 export const createStory = async (req, res) => {
   const { emojiSequence, authorNickname } = req.body;
-  const translation = translateEmojis(emojiSequence);
+  const translation = await translateEmojis(emojiSequence);
+  console.log(translation);
+
   const newStory = new EmojiStoryModel({
     emojiSequence,
     translation,
